@@ -35,6 +35,9 @@
             .qrcode-container {
                 @apply flex flex-col items-center p-4 bg-gray-50 rounded-lg border border-gray-200;
             }
+            .website-link {
+                @apply text-primary hover:underline transition-colors;
+            }
         }
     </style>
 </head>
@@ -73,7 +76,9 @@
                         </div>
                         <div>
                             <p class="text-sm text-secondary">Email</p>
-                            <p class="text-gray-800">Allen.ge@tcl.com</p>
+                            <p class="text-gray-800">
+                                <a href="mailto:Allen.ge@tcl.com" class="website-link">Allen.ge@tcl.com</a>
+                            </p>
                         </div>
                     </div>
 
@@ -83,7 +88,7 @@
                         </div>
                         <div>
                             <p class="text-sm text-secondary">LinkedIn</p>
-                            <p class="text-gray-800">www.linkedin.com/in/allen-g-151056154</p>
+                            <p class="text-gray-800"><a href="https://www.linkedin.com/in/allen-g-151056154" class="website-link" target="_blank" rel="noopener">www.linkedin.com/in/allen-g-151056154</a></p>
                         </div>
                     </div>
 
@@ -103,7 +108,7 @@
                         </div>
                         <div>
                             <p class="text-sm text-secondary">Website</p>
-                            <p class="text-gray-800">TCL Home Security</p>
+                            <p class="text-gray-800"><a href="https://tclhomesecurity.com/" class="website-link" target="_blank" rel="noopener">TCL Home Security | Trusted Smart Home Lock Solutions</a></p>
                         </div>
                     </div>
                 </div>
@@ -139,6 +144,7 @@ ADR;WORK:;;702, Building G1, TCL International E-City, Shuguang Community, Xili 
 TEL;CELL:+86 18816828468
 EMAIL:Allen.ge@tcl.com
 URL;WORK:https://www.linkedin.com/in/allen-g-151056154
+URL;HOME:https://tclhomesecurity.com/
 END:VCARD`;
 
         // 生成vCard二维码

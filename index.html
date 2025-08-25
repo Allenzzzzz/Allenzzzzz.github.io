@@ -1,0 +1,108 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人联系方式</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#64748b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .contact-card {
+                @apply bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-md w-full mx-auto;
+            }
+            .contact-item {
+                @apply flex items-center gap-4 py-3 border-b border-gray-100 last:border-0;
+            }
+            .contact-icon {
+                @apply w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4 font-sans">
+    <div class="contact-card">
+        <!-- 个人头像 -->
+        <div class="flex flex-col items-center mb-6">
+            <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/9c295514bd964731bdd602e321d7c9fb~tplv-a9rns2rl98-image.image?rcl=202508251344566AE596254C65CE244BAA&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756705497&amp;x-signature=31Huo4t6E94smSRxSPhbVe8XsB0%3D" alt="个人头像" class="w-32 h-32 rounded-full object-cover border-4 border-primary/20 mb-4">
+            <h1 class="text-2xl font-bold text-gray-800">Allen Ge</h1>
+            <p class="text-secondary">Channel Sales Manager</p>
+            <p class="text-secondary">TCL Smart Home</p>
+        </div>
+
+        <!-- 联系方式列表 -->
+        <div class="space-y-1">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fa fa-phone"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-secondary">Phone</p>
+                    <p class="text-gray-800">+86 18816828468</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fa fa-envelope"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-secondary">Email</p>
+                    <p class="text-gray-800">Allen.ge@tcl.com</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fa fa-linkedin"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-secondary">LinkedIn</p>
+                    <p class="text-gray-800">www.linkedin.com/in/allen-g-151056154</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fa fa-map-marker"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-secondary">Add</p>
+                    <p class="text-gray-800">702, Building G1, TCL&nbsp;International E-City, Shuguang Community, Xili Street&nbsp;
+
+Nanshan District, Shenzhen City Guangdong China, 518000</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fa fa-globe"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-secondary">Website</p>
+                    <p class="text-gray-800">TCL Home Security | Trusted Smart Home Lock Solutions</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部备注 -->
+        <div class="mt-8 text-center text-sm text-secondary">
+            <p>Scan the Code to Contact me</p>
+        </div>
+    </div>
+
+
+</body></html>

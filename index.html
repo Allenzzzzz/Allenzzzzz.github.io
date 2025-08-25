@@ -1,17 +1,20 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Allen Ge - Contact Information</title>
+    <!-- 外部资源通过CDN加载，无需本地下载 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- 引入生成二维码的库 -->
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script>
+        // Tailwind 配置（自定义颜色和字体）
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0077B5', // LinkedIn蓝色，适合商务形象
+                        primary: '#0077B5', // LinkedIn蓝色，适配商务风格
                         secondary: '#64748b',
                     },
                     fontFamily: {
@@ -24,13 +27,13 @@
     <style type="text/tailwindcss">
         @layer utilities {
             .contact-card {
-                @apply bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-2xl w-full mx-auto;
+                @apply bg-white rounded-xl shadow-lg p-4 md:p-8 max-w-2xl w-full mx-auto;
             }
             .contact-item {
-                @apply flex items-center gap-4 py-3 border-b border-gray-100 last:border-0;
+                @apply flex items-center gap-3 py-3 border-b border-gray-100 last:border-0;
             }
             .contact-icon {
-                @apply w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary;
+                @apply w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary;
             }
             .qrcode-container {
                 @apply flex flex-col items-center p-4 bg-gray-50 rounded-lg border border-gray-200;
@@ -38,45 +41,51 @@
             .website-link {
                 @apply text-primary hover:underline transition-colors;
             }
+            .profile-header {
+                @apply flex flex-col items-center mb-6 md:mb-8 px-2;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4 font-sans">
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-3 font-sans">
     <div class="contact-card">
-        <!-- 个人头像和基本信息 -->
-        <div class="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
-            <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/044fb7788b7847dfa087b54d6aea915f~tplv-a9rns2rl98-image.image?rcl=202508251429368206533B38B4AA6E2BA2&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756708176&amp;x-signature=fZ30rMyBxQu9KvKjc%2BFbVNbHdB4%3D" alt="Allen Ge Profile Photo" class="w-32 h-32 rounded-full object-cover border-4 border-primary/20">
-            <div class="text-center md:text-left">
-                <h1 class="text-2xl font-bold text-gray-800">Allen Ge</h1>
-                <p class="text-secondary">Channel Sales Manager</p>
-                <p class="text-secondary">TCL Smart Home</p>
-            </div>
+        <!-- 个人头像+基本信息（手机端优化：缩小尺寸、垂直居中） -->
+        <div class="profile-header">
+            <img 
+                src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/044fb7788b7847dfa087b54d6aea915f~tplv-a9rns2rl98-image.image?rcl=202508251429368206533B38B4AA6E2BA2&rk3s=8e244e95&rrcfp=e75484ac&x-expires=1756708176&x-signature=fZ30rMyBxQu9KvKjc%2BFbVNbHdB4%3D" 
+                alt="Allen Ge Profile Photo" 
+                class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-primary/20 mb-3 md:mb-4"
+            >
+            <h1 class="text-xl md:text-2xl font-bold text-gray-800 mb-1">Allen Ge</h1>
+            <p class="text-sm md:text-base text-secondary mb-1">Channel Sales Manager</p>
+            <p class="text-sm md:text-base text-secondary">TCL Smart Home</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- 联系方式列表 -->
+        <!-- 主体内容（手机端垂直排列，电脑端左右分栏） -->
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+            <!-- 联系方式列表（手机端文字缩小、自动换行） -->
             <div>
-                <h2 class="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+                <h2 class="text-base md:text-lg font-semibold text-gray-700 mb-3 md:mb-4 flex items-center">
                     <i class="fa fa-address-card text-primary mr-2"></i> Contact Information
                 </h2>
                 <div class="space-y-1">
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fa fa-phone"></i>
+                            <i class="fa fa-phone text-sm"></i>
                         </div>
                         <div>
-                            <p class="text-sm text-secondary">Phone</p>
-                            <p class="text-gray-800">+86 18816828468</p>
+                            <p class="text-xs md:text-sm text-secondary">Phone</p>
+                            <p class="text-sm md:text-base text-gray-800">+86 18816828468</p>
                         </div>
                     </div>
 
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-envelope text-sm"></i>
                         </div>
                         <div>
-                            <p class="text-sm text-secondary">Email</p>
-                            <p class="text-gray-800">
+                            <p class="text-xs md:text-sm text-secondary">Email</p>
+                            <p class="text-sm md:text-base text-gray-800">
                                 <a href="mailto:Allen.ge@tcl.com" class="website-link">Allen.ge@tcl.com</a>
                             </p>
                         </div>
@@ -84,47 +93,51 @@
 
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fa fa-linkedin"></i>
+                            <i class="fa fa-linkedin text-sm"></i>
                         </div>
                         <div>
-                            <p class="text-sm text-secondary">LinkedIn</p>
-                            <p class="text-gray-800"><a href="https://www.linkedin.com/in/allen-g-151056154" class="website-link" target="_blank" rel="noopener">www.linkedin.com/in/allen-g-151056154</a></p>
+                            <p class="text-xs md:text-sm text-secondary">LinkedIn</p>
+                            <p class="text-sm md:text-base text-gray-800 break-all">
+                                <a href="https://www.linkedin.com/in/allen-g-151056154" class="website-link" target="_blank" rel="noopener">www.linkedin.com/in/allen-g-151056154</a>
+                            </p>
                         </div>
                     </div>
 
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fa fa-map-marker"></i>
+                            <i class="fa fa-map-marker text-sm"></i>
                         </div>
                         <div>
-                            <p class="text-sm text-secondary">Address</p>
-                            <p class="text-gray-800">702, Building G1, TCL International E-City, Shuguang Community, Xili Street, Nanshan District, Shenzhen City, Guangdong, China, 518000</p>
+                            <p class="text-xs md:text-sm text-secondary">Address</p>
+                            <p class="text-sm md:text-base text-gray-800 break-words">702, Building G1, TCL International E-City, Shuguang Community, Xili Street, Nanshan District, Shenzhen City, Guangdong, China, 518000</p>
                         </div>
                     </div>
 
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fa fa-globe"></i>
+                            <i class="fa fa-globe text-sm"></i>
                         </div>
                         <div>
-                            <p class="text-sm text-secondary">Website</p>
-                            <p class="text-gray-800"><a href="https://tclhomesecurity.com/" class="website-link" target="_blank" rel="noopener">TCL Home Security | Trusted Smart Home Lock Solutions</a></p>
+                            <p class="text-xs md:text-sm text-secondary">Website</p>
+                            <p class="text-sm md:text-base text-gray-800 break-all">
+                                <a href="https://tclhomesecurity.com/" class="website-link" target="_blank" rel="noopener">TCL Home Security | Trusted Smart Home Lock Solutions</a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- vCard二维码区域 -->
+            <!-- vCard二维码+下载区域（手机端缩小二维码尺寸） -->
             <div>
-                <h2 class="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+                <h2 class="text-base md:text-lg font-semibold text-gray-700 mb-3 md:mb-4 flex items-center">
                     <i class="fa fa-qrcode text-primary mr-2"></i> Add to Contacts
                 </h2>
                 <div class="qrcode-container">
-                    <div id="qrcode" class="mb-4"></div>
-                    <p class="text-sm text-center text-gray-600">
+                    <div id="qrcode" class="mb-3 md:mb-4"></div>
+                    <p class="text-xs md:text-sm text-center text-gray-600 px-2">
                         Scan this QR code to add my contact information directly to your phone
                     </p>
-                    <button id="downloadVcard" class="mt-4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm flex items-center">
+                    <button id="downloadVcard" class="mt-3 md:mt-4 px-3 py-2 md:px-4 md:py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm flex items-center">
                         <i class="fa fa-download mr-2"></i> Download vCard
                     </button>
                 </div>
@@ -133,7 +146,7 @@
     </div>
 
     <script>
-        // 定义vCard格式的联系信息
+        // vCard核心数据（扫码添加通讯录的关键信息）
         const vcardInfo = `BEGIN:VCARD
 VERSION:3.0
 N:Ge;Allen;;;
@@ -147,30 +160,33 @@ URL;WORK:https://www.linkedin.com/in/allen-g-151056154
 URL;HOME:https://tclhomesecurity.com/
 END:VCARD`;
 
-        // 生成vCard二维码
+        // 动态生成二维码（适配手机/电脑屏幕尺寸）
         window.onload = function() {
+            const isMobile = window.innerWidth < 768;
+            const qrcodeSize = isMobile ? 150 : 180; // 手机端150px，电脑端180px
+
             new QRCode(document.getElementById("qrcode"), {
                 text: vcardInfo,
-                width: 180,
-                height: 180,
-                colorDark: "#0077B5", // 使用LinkedIn蓝色
+                width: qrcodeSize,
+                height: qrcodeSize,
+                colorDark: "#0077B5",
                 colorLight: "#ffffff",
-                correctLevel: QRCode.CorrectLevel.H
+                correctLevel: QRCode.CorrectLevel.H // 高容错率，部分遮挡仍可识别
             });
 
-            // 下载vCard文件功能
+            // 点击下载vCard文件（生成.vcf格式，支持直接导入通讯录）
             document.getElementById('downloadVcard').addEventListener('click', function() {
-                const blob = new Blob([vcardInfo], {type: 'text/vcard'});
+                const blob = new Blob([vcardInfo], { type: 'text/vcard' });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = 'Allen_Ge.vcf'; // vCard文件通常以.vcf为扩展名
+                a.download = 'Allen_Ge.vcf'; // 文件名固定为个人姓名，便于识别
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-                URL.revokeObjectURL(url);
+                URL.revokeObjectURL(url); // 释放资源，避免内存占用
             });
         };
     </script>
-
-</body></html>
+</body>
+</html>
